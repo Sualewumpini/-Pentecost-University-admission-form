@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentecost University Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .row > div {
+            width: 48%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form action="process_form.php" method="POST">
+        <h1>PENTECOST UNIVERSITY</h1>
+        <p>APPLICATION FOR UNDERGRADUATE ADMISSION</p>
+        <fieldset>
+            <legend>Programme Applied For</legend>
+            <div class="row">
+                <div>
+                    <label for="first-choice">1st Choice</label>
+                    <input type="text" id="first-choice" name="first_choice" required>
+                </div>
+                <div>
+                    <label for="second-choice">2nd Choice</label>
+                    <input type="text" id="second-choice" name="second_choice" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Level Applied For</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="level[]" value="Level 100"> Level 100</label>
+                <label><input type="checkbox" name="level[]" value="Level 200"> Level 200</label>
+                <label><input type="checkbox" name="level[]" value="Level 300"> Level 300</label>
+                <label><input type="checkbox" name="school[]" value="Regular School"> Regular School (R/S)</label>
+                <label><input type="checkbox" name="school[]" value="Weekend School"> Weekend School (W/S)</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Student Information</legend>
+            <div class="row">
+                <div>
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div>
+                    <label for="title">Title</label>
+                    <select id="title" name="title">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Dr">Dr</option>
+                        <option value="Rev">Rev</option>
+                    </select>
+                </div>
+            </div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="othernames">Other Names</label>
+            <input type="text" id="othernames" name="othernames">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="place_of_birth">Place of Birth</label>
+            <input type="text" id="place_of_birth" name="place_of_birth" required>
+            <label for="gender">Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Female" required> Female</label>
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+            </div>
+            <label for="nationality">Nationality</label>
+            <input type="text" id="nationality" name="nationality" required>
+            <label for="hometown">Home Town</label>
+            <input type="text" id="hometown" name="hometown" required>
+            <label for="region_of_hometown">Region of Hometown</label>
+            <input type="text" id="region_of_hometown" name="region_of_hometown" required>
+            <label for="religion">Religion</label>
+            <input type="text" id="religion" name="religion" required>
+            <label for="marital_status">Marital Status</label>
+            <div class="radio-group">
+                <label><input type="radio" name="marital_status" value="Single" required> Single</label>
+                <label><input type="radio" name="marital_status" value="Married" required> Married</label>
+                <label><input type="radio" name="marital_status" value="Divorced" required> Divorced</label>
+            </div>
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+            <label for="phone">Telephone No.</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="email">E-mail Address</label>
+            <input type="email" id="email" name="email" required>
+            <label for="permanent_address">Permanent Home Address (if different from above)</label>
+            <textarea id="permanent_address" name="permanent_address" rows="4"></textarea>
+            <label for="parent_guardian">Name of Parent/Guardian/Sponsor</label>
+            <input type="text" id="parent_guardian" name="parent_guardian" required>
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" name="occupation" required>
+            <label for="parent_phone">Telephone No.</label>
+            <input type="tel" id="parent_phone" name="parent_phone" required>
+            <label>Are you physically challenged or do you suffer any form of challenge?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="physically_challenged" value="Yes" required> Yes</label>
+                <label><input type="radio" name="physically_challenged" value="No" required> No</label>
+            </div>
+            <label for="challenge_specify">If yes, please specify</label>
+            <textarea id="challenge_specify" name="challenge_specify" rows="2"></textarea>
+            <label>Are you currently in employment?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="employment_status" value="Yes" required> Yes</label>
+                <label><input type="radio" name="employment_status" value="No" required> No</label>
+            </div>
+            <label for="employment_type">If yes, indicate type/nature of employment</label>
+            <textarea id="employment_type" name="employment_type" rows="2"></textarea>
+            <label for="employer_address">Name and Address of Employer</label>
+            <textarea id="employer_address" name="employer_address" rows="2"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Educational Background</legend>
+            <table>
+                <tr>
+                    <th>Name of School</th>
+                    <th>Dates Attended</th>
+                    <th>Qualifications Obtained</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="school1" required></td>
+                    <td><input type="text" name="dates1" required></td>
+                    <td><input type="text" name="qualification1" required></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="school2"></td>
+                    <td><input type="text" name="dates2"></td>
+                    <td><input type="text" name="qualification2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="school3"></td>
+                    <td><input type="text" name="dates3"></td>
+                    <td><input type="textContinuing from where the previous part left off, here is the complete HTML form based on the provided images of the Pentecost University admission form:
+
+### HTML Structure (continued)
+```html
+                    <td><input type="text" name="qualification3"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="school4"></td>
+                    <td><input type="text" name="dates4"></td>
+                    <td><input type="text" name="qualification4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="school5"></td>
+                    <td><input type="text" name="dates5"></td>
+                    <td><input type="text" name="qualification5"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Examination Details</legend>
+            <table>
+                <tr>
+                    <th>WASSCE</th>
+                    <th>1<sup>st</sup> Sitting</th>
+                    <th>2<sup>nd</sup> Sitting</th>
+                    <th>3<sup>rd</sup> Sitting</th>
+                </tr>
+                <tr>
+                    <td>Index Number</td>
+                    <td><input type="text" name="index1"></td>
+                    <td><input type="text" name="index2"></td>
+                    <td><input type="text" name="index3"></td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td><input type="text" name="year1"></td>
+                    <td><input type="text" name="year2"></td>
+                    <td><input type="text" name="year3"></td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td><input type="text" name="month1"></td>
+                    <td><input type="text" name="month2"></td>
+                    <td><input type="text" name="month3"></td>
+                </tr>
+                <tr>
+                    <td>Core English</td>
+                    <td><input type="text" name="core_english1"></td>
+                    <td><input type="text" name="core_english2"></td>
+                    <td><input type="text" name="core_english3"></td>
+                </tr>
+                <tr>
+                    <td>Core Mathematics</td>
+                    <td><input type="text" name="core_math1"></td>
+                    <td><input type="text" name="core_math2"></td>
+                    <td><input type="text" name="core_math3"></td>
+                </tr>
+                <tr>
+                    <td>Core/Integrated Science</td>
+                    <td><input type="text" name="core_science1"></td>
+                    <td><input type="text" name="core_science2"></td>
+                    <td><input type="text" name="core_science3"></td>
+                </tr>
+                <tr>
+                    <td>Core Social Studies</td>
+                    <td><input type="text" name="core_social1"></td>
+                    <td><input type="text" name="core_social2"></td>
+                    <td><input type="text" name="core_social3"></td>
+                </tr>
+                <tr>
+                    <td>Elective</td>
+                    <td><input type="text" name="elective1_1"></td>
+                    <td><input type="text" name="elective1_2"></td>
+                    <td><input type="text" name="elective1_3"></td>
+                </tr>
+                <tr>
+                    <td>Elective</td>
+                    <td><input type="text" name="elective2_1"></td>
+                    <td><input type="text" name="elective2_2"></td>
+                    <td><input type="text" name="elective2_3"></td>
+                </tr>
+                <tr>
+                    <td>Elective</td>
+                    <td><input type="text" name="elective3_1"></td>
+                    <td><input type="text" name="elective3_2"></td>
+                    <td><input type="text" name="elective3_3"></td>
+                </tr>
+                <tr>
+                    <td>Elective</td>
+                    <td><input type="text" name="elective4_1"></td>
+                    <td><input type="text" name="elective4_2"></td>
+                    <td><input type="text" name="elective4_3"></td>
+                </tr>
+                <tr>
+                    <td>Elective</td>
+                    <td><input type="text" name="elective5_1"></td>
+                    <td><input type="text" name="elective5_2"></td>
+                    <td><input type="text" name="elective5_3"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <input type="submit" value="Submit Application">
+    </form>
+</body>
+</html>
